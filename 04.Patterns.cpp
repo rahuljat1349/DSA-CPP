@@ -381,54 +381,98 @@ int main()
     //                             **    **
     //                             *      *
     //
-    int n = 4;
+    // int n = 4;
 
-    // upper part
+    // // upper part
+    // for (int i = 0; i < n; i++)
+    // {
+    //     // triangle
+
+    //     for (int j = 0; j <= i; j++)
+    //     {
+    //         cout << "* ";
+    //     }
+
+    //     // spaces
+
+    //     for (int j = 0; j < (n - i - 1) * 2; j++)
+    //     {
+    //         cout << "  ";
+    //     }
+
+    //     // triangle
+    //     for (int j = 0; j <= i; j++)
+    //     {
+    //         cout << "* ";
+    //     }
+
+    //     cout << endl;
+    // }
+    // // lower part
+
+    // for (int i = n; i > 0; i--)
+    // {
+    //     // triangle
+    //     for (int j = 0; j < i; j++)
+    //     {
+    //         cout << "* ";
+    //     }
+
+    //     // spaces
+
+    //     for (int j = 0; j < (n - i) * 2; j++)
+    //     {
+    //         cout << "  ";
+    //     }
+
+    //     // triangle
+    //     for (int j = 0; j < i; j++)
+    //     {
+    //         cout << "* ";
+    //     }
+
+    //     cout << endl;
+    // }
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    // Binary Pyramid
+    //                  1
+    //                 121
+    //                12121
+    //               1212121
+    //
+    //
+    //
+    //
+    //
+    //
+    int n = 5;
     for (int i = 0; i < n; i++)
     {
-        // triangle
-
-        for (int j = 0; j <= i; j++)
+        for (int j = 1; j <= n - i; j++)
         {
-            cout << "* ";
+            cout << " ";
         }
-
-        // spaces
-
-        for (int j = 0; j < (n - i - 1) * 2; j++)
+        for (int j = 1; j <= i * 2 - 1; j++)
         {
-            cout << "  ";
-        }
-
-        // triangle
-        for (int j = 0; j <= i; j++)
-        {
-            cout << "* ";
-        }
-
-        cout << endl;
-    }
-    // lower part
-
-    for (int i = n; i > 0; i--)
-    {
-        // triangle
-        for (int j = 0; j < i; j++)
-        {
-            cout << "* ";
-        }
-
-        // spaces
-
-        for (int j = 0; j < (n - i) * 2; j++)
-        {
-            cout << "  ";
-        }
-
-        // triangle
-        for (int j = 0; j < i; j++)
-        {
-            cout << "* ";
+            j % 2 == 0 ? cout << "2" : cout << "1";
         }
 
         cout << endl;
