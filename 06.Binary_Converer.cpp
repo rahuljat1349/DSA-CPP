@@ -2,11 +2,8 @@
 
 using namespace std;
 
-int main()
+int decToBin(int num)
 {
-
-    int num = 7;
-
     int ans = 0;
     int pow = 1;
 
@@ -17,10 +14,16 @@ int main()
 
         ans += (rem * pow);
         pow *= 10;
-       
-
     }
-        cout << ans << endl;
-        
-        return 0;
+    return ans;
+}
+
+int main()
+{
+    for (int i = 1; i <= 10; i++)
+    {
+        cout << decToBin(i) << endl;
+    }
+
+    return 0;
 }
