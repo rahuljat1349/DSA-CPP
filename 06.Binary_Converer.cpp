@@ -17,13 +17,26 @@ int decToBin(int num)
     }
     return ans;
 }
+int binToDec(int num)
+{
+    int ans = 0;
+    int pow = 1;
+
+    while (num > 0)
+    {
+        int rem = num % 10;
+        num /= 10;
+
+        ans += (rem * pow);
+        pow *= 2;
+    }
+    return ans;
+}
 
 int main()
 {
-    for (int i = 1; i <= 10; i++)
-    {
-        cout << decToBin(i) << endl;
-    }
+
+    cout << binToDec(10110) << endl;
 
     return 0;
 }
