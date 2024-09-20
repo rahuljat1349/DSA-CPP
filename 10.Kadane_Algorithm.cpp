@@ -60,7 +60,7 @@ int main()
     //
     //
 
-    // maximum subarray sum
+    // maximum subarray sum    (Brute Force)
 
     // int n = 7;
 
