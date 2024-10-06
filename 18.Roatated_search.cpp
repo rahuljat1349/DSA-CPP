@@ -43,7 +43,8 @@ int Search(vector<int> nums, int target)
 int main()
 {
     // Ascending order; distinct values
-    vector<int> nums = {1, 2, 3, 4, 5, 6, 1, 2, 3};
+    vector<int> nums = {4, 5, 6, 7, 0, 1, 2}; // Valid rotated sorted array
     int tar = 0;
+    cout << "answer is " << Search(nums,tar)<< endl;
     return 0;
 }
