@@ -5,9 +5,24 @@ using namespace std;
 int Search(vector<int> nums)
 {
     int st = 0, end = nums.size() - 1;
+    if (end == 0)
+    {
+        return nums[0];
+    }
     while (st <= end)
     {
         int mid = st + (end - st) / 2;
+
+        // edge cases
+        if (mid == 0 && nums[0] != nums[1])
+        {
+            return nums[mid];
+        }
+        if (mid == end && nums[end] != nums[end - 1])
+        {
+            return nums[mid];
+        }
+        //
         if (nums[mid] != nums[mid - 1] && nums[mid] != nums[mid + 1])
         {
             return nums[mid];
@@ -45,7 +60,7 @@ int main()
     // after finding mid, we can check either it is equal to it's left element or the right
     // if it is equal to left, that means now left array has odd numbers that means that single
     // element exist in left array.
-    vector<int> arr = {1, 1, 2,2, 3, 3, 4, 4, 7,9, 7, 8, 8};
+    vector<int> arr = {1, 1, 2, 2, 3, 3, 4, 4, 7, 9, 7, 8, 8};
     cout << "Answer is " << Search(arr) << endl;
     return 0;
 }
