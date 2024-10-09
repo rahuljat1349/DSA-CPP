@@ -69,8 +69,8 @@ int allocateBooks(vector<int> nums, int n, int m)
 int main()
 {
 
-	vector<int> Arr = {15,17,20};
-	int n = 4,
+	vector<int> Arr = {20,15,17};
+	int n = 3,
 		m = 2;
 
 	cout << "Answer is " << allocateBooks(Arr, n, m) << endl;
