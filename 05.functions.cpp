@@ -71,10 +71,27 @@ int nCr(int n, int r)
     return fact_n / (fact_r * fact_nMr);
 }
 
+
+
 int main()
 {
 
-    cout << nCr(8,2) << endl;
+    // cout << nCr(8,2) << endl;
+
+    // lamda functions
+   auto result = [](int num)
+    {
+        cout << num << endl;
+    };
+    result(10);
+    //or
+    // [](int num)
+    // {
+    //     cout << num << endl;
+    // }(10);
 
     return 0;
 }
+
+
+
