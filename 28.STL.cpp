@@ -5,7 +5,10 @@
 #include <stack>
 #include <queue>
 #include <map>
+#include <set>
 #include <unordered_map>
+#include <unordered_set>
+#include <algorithm>
 using namespace std;
 
 int main()
@@ -123,11 +126,85 @@ int main()
     // m.emplace(1,300);
     // m.emplace(1,400);
 
-    //Unordered map      -> saves in random order
-    unordered_map<int,int> um;
-    um.emplace(1, 200);
-    um.emplace(2, 300);
-    um.emplace(3, 400);
+    // Unordered map      -> saves in random order
+    //  unordered_map<int,int> um;
+    //  um.emplace(1, 200);
+    //  um.emplace(2, 300);
+    //  um.emplace(3, 400);
 
+    // Sets   -> stores unique values
+
+    // set<int> s;
+    // s.insert(1);
+    // s.insert(1);
+    // s.insert(1);
+    // s.insert(1);
+
+    // for (auto val : s)
+    // {
+    //     cout << val << " ";    // 1
+    // }
+    // cout << endl;
+
+    // Multi Set  ->   stores duplicate values
+    // multiset<int> s;
+
+    // s.insert(1);
+    // s.insert(1);
+    // s.insert(1);
+    // for (auto val : s)
+    // {
+    //     cout << val << " ";
+    // }
+    // cout << endl;
+
+    // unordered Set  ->   stores without order O(1)
+    // unordered_set<int> s;
+
+    // s.insert(1);
+    // s.insert(2);
+    // s.insert(3);
+    // for (auto val : s)
+    // {
+    //     cout << val << " ";
+    // }
+    // cout << endl;
+
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    // Algorithms
+    int arr[5] = {1, 5, 4, 2, 3};
+
+    sort(arr, arr + 5); // simple sort
+
+    sort(arr, arr + 5, greater<int>()); // descending sort
+    
     return 0;
 }
