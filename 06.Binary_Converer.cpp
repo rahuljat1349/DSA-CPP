@@ -36,7 +36,8 @@ int binToDec(int num)
 int main()
 {
 
-    cout << decToBin(0.5) << endl;
+    // cout << decToBin(64) << endl;
+    cout << binToDec(1000) << endl;
 
     return 0;
 }
