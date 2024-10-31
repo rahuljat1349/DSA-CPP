@@ -95,7 +95,69 @@ void printDigits(int n)
 //
 //
 //
+bool isArmstrong(int n)
+{
+    int sum = 0;
+    int num = n;
+    while (num > 0)
+    {
+        int dig = num % 10;
+        sum += (dig * dig * dig);
+        num /= 10;
+    }
+
+    if (sum == n)
+        return true;
+
+    return false;
+}
 //
+//
+//
+//
+int findHCF(int a, int b)
+{
+    int hcf = 0;
+    if (a == 0)
+        return b;
+    if (b == 0)
+        return a;
+    if (b == a)
+        return a;
+
+    for (int i = 1; i < min(a, b); i++)
+    {
+        if (a % i == 0 && b % i == 0)
+        {
+            hcf = i;
+        }
+    }
+    return hcf;
+}
+//
+//
+int findGCD(int a, int b)
+{
+    int gcd = 0;
+    while (a > 0 && b > 0)
+    {
+        if (a > b)  // a -= b;
+            a %= b; // more efficient
+
+        if (a < b)
+            b %= a;
+    }
+    if (a == 0)
+        return b;
+
+    return a;
+}
+
+// GCD with recursion
+int gcdRec(int a, int b){
+    if(b == 0) return a;
+    return gcdRec(b, a%b);
+}
 int main()
 {
     // Prime numbers from 2 to n
@@ -111,12 +173,26 @@ int main()
     // Print all digits in a number
 
     int n = 2546;
-    printDigits(n);
+    // printDigits(n);
     // Or
     // cout << (int) (log10(n) + 1) << endl;
 
     // Armstrong Number
     // armstrong number is a number that is equal to the sum of cubes of it's digits. -> 153 = 1^3 + 5^3 + 3^3
+
+    // cout << isArmstrong(153) << endl;
+
+    //
+    //
+    //
+    //
+    // G C D / H C F
+    int a = 20, b = 28;
+    // cout << findHCF(a, b) << endl;
+    // Euclid's algorithm to find hcf ->
+
+    // cout << findGCD(a, b) << endl;
+    cout << gcdRec(a, b) << endl;
 
     return 0;
 }
