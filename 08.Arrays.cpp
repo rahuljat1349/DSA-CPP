@@ -187,11 +187,11 @@ int main()
     // int length = sizeof(arr) / sizeof(int);
     // for (int i = 0; i < length / 2; i++)
     // {
-    //     // int first = arr[i];
-    //     // arr[i] = arr[length-i-1];
-    //     // arr[length-i-1] = first;
+    //     int first = arr[i];
+    //     arr[i] = arr[length-i-1];
+    //     arr[length-i-1] = first;
 
-    // // Or
+    // Or
 
     //     swap(arr[i],arr[length-i-1]);
 
@@ -296,7 +296,6 @@ int main()
 
     // for (int i = 0; i < sizeof(arr1) / sizeof(int); i++)
     // {
-        
 
     //     for (int j = 0; j < sizeof(arr2) / sizeof(int); j++)
     //     {
@@ -305,13 +304,8 @@ int main()
     //             cout << arr1[i] << " ";
     //         }
     //     }
-      
+
     // }
-
-
-
-
-    
 
     return 0;
 }

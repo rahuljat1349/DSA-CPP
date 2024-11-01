@@ -154,10 +154,54 @@ int findGCD(int a, int b)
 }
 
 // GCD with recursion
-int gcdRec(int a, int b){
-    if(b == 0) return a;
-    return gcdRec(b, a%b);
+int gcdRec(int a, int b)
+{
+    if (b == 0)
+        return a;
+    return gcdRec(b, a % b);
 }
+// LCM
+
+int lcm(int a, int b)
+{
+    return (a * b) / gcdRec(a, b);
+}
+//
+//
+//
+
+int reverseOfNum(int n)
+{
+    int ans = 0;
+    while (n != 0)
+    {
+        int rem = n % 10;
+        if( ans > __INT_MAX__ /10 || ans < __WINT_MIN__/10){
+            return 0;
+        }
+        ans = (ans * 10) + rem;
+        n /= 10;
+    }
+    return ans;
+}
+//
+///
+//
+//
+//
+// Palindrom number
+bool checkIfPalindrom(int n)
+{
+
+return (n == reverseOfNum(n) && n > 0);
+}
+//
+//
+//
+//  Modulo Arithmatics ->
+//
+//
+//
 int main()
 {
     // Prime numbers from 2 to n
@@ -172,7 +216,7 @@ int main()
 
     // Print all digits in a number
 
-    int n = 2546;
+    // int n = 2546;
     // printDigits(n);
     // Or
     // cout << (int) (log10(n) + 1) << endl;
@@ -192,7 +236,21 @@ int main()
     // Euclid's algorithm to find hcf ->
 
     // cout << findGCD(a, b) << endl;
-    cout << gcdRec(a, b) << endl;
+    // cout << gcdRec(a, b) << endl;
+
+    // LCM  -> since a*b = lcm(a,b)*hcf(a,b) => lcm(a,b) = a*b/hcf(a,b)
+    // cout << lcm(a, b) << endl;
+
+    // Reverse of a number
+    int n = 125;
+    // cout << reverseOfNum(n) << endl;
+
+    // Palindrom number ->
+
+    // cout << checkIfPalindrom(535) << endl;
+
+    // Modulo Arithmatics ->
+
 
     return 0;
 }
