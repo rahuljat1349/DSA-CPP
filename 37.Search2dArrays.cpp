@@ -75,7 +75,7 @@ bool searchInMatrix2(vector<vector<int>> mat, int target)
 int main()
 {
     // ! Condition -> matrix must be in non-decreasing order
-    vector<vector<int>> matrix = {
+    vector<vector<int>> matrix =  {
         {1, 2, 3},
         {4, 15, 16},
         {17, 28, 39}};
@@ -91,5 +91,9 @@ int main()
         {6, 8, 9}};
     int target2 = 8;
     cout << searchInMatrix2(matrix2, target2) << endl;  //? it also works on first condition
+
+
+
+    
     return 0;
 }
