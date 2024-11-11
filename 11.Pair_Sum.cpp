@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <unordered_map>
 using namespace std;
 
 vector<int> pairSum(vector<int> nums, int target)
@@ -19,6 +20,7 @@ vector<int> pairSum(vector<int> nums, int target)
         }
         return ans;
     }
+    return ans;
 }
 
 //
@@ -62,6 +64,28 @@ vector<int> twoPairSum(vector<int> nums, int target)
             j--;
         }
     }
+    return ansArr;
+}
+
+vector<int> twoSum(vector<int> nums, int target)
+{
+    unordered_map<int, int> m;
+    vector<int>
+        ansArr;
+    for (int i = 0; i < nums.size(); i++)
+    {
+        int first = nums[i];
+        int sec = target - first;
+
+        if (m.find(sec) != m.end())
+        {
+            ansArr.push_back(m[sec]);
+            ansArr.push_back(i);
+            break;
+        }
+        m[first] = i;
+    }
+    return ansArr;
 }
 
 int main()
@@ -110,15 +134,19 @@ int main()
     vector<int> nums = {2, 7, 11, 15};
     int target = 26;
 
-    vector<int> ansArr = twoPairSum(nums, target);
+    //
+    //
+    //
+    //
+
+    //  the best way -> hashing (most optimized)
+    vector<int> arr = {2, 7, 15, 11};               // without sorted
+    int tar = 26;
+    vector<int> ansArr = twoSum(nums, target);
 
     cout << "Target Element's indices are : ";
     cout << ansArr[0] << "," << ansArr[1];
-
-    //
-    //
-    //
-    //
+    cout << endl;
 
     return 0;
 }
