@@ -19,12 +19,12 @@ public:
     // }
 
     // Parameterized constructor
-    Person(string myName, int myAge, string prof)
+    Person(string name, int age, string profession)
     {
         cout << "param Construtor called!" << endl;
-        name = myName; // default values..
-        age = myAge;
-        profession = prof;
+        this->name = name; // default values..
+        this->age = age;
+        this->profession = profession;
     }
 
     // Copy constructor
@@ -41,6 +41,11 @@ public:
         cout << "Person's name is " << name << endl;
         cout << "Person's age is " << age << endl;
         cout << name << " is a " << profession << endl;
+    }
+
+    // destrutor
+    ~ Person() {
+
     }
 };
 int main()
