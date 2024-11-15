@@ -93,6 +93,7 @@ vector<vector<int>> threeSUM(vector<int> nums)
         int j = i + 1, k = n - 1;
         while (j < k)
         {
+
             int sum = nums[i] + nums[j] + nums[k];
             if (sum < 0)
             {
@@ -111,6 +112,10 @@ vector<vector<int>> threeSUM(vector<int> nums)
                 while (j < k && nums[j] == nums[j - 1])
                 {
                     j++;
+                }
+                while (j < k && nums[k] == nums[k + 1])
+                {
+                    k--;
                 }
             }
         }
