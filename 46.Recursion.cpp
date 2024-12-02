@@ -72,4 +72,8 @@ int main()
     int tar = 8, st = 0, end = 4;
     cout << binarySearch(arr, tar, st, end) << endl;
     return 0;
+
+
+
+    
 }
