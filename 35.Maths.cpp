@@ -208,7 +208,6 @@ int main()
     // int n = 42;
     // cout << isPrime(43) << endl;
     //
-    //
 
     // Prime numbers from a to b
     // int start = 2, end = 30;
@@ -226,9 +225,6 @@ int main()
 
     // cout << isArmstrong(153) << endl;
 
-    //
-    //
-    //
     //
     // G C D / H C F
     int a = 20, b = 28;
