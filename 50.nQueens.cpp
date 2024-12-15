@@ -57,6 +57,7 @@ void nQueens(vector<vector<string>> &ans, vector<string> &board, int n, int row)
     }
 }
 
+
 int main()
 {
     int n = 4;
@@ -71,7 +72,7 @@ int main()
         {
             cout << col << endl;
         }
-        cout << "----------" << endl;
+        cout << "_____" << endl;
     }
 
     return 0;
