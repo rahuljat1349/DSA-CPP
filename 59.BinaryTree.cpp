@@ -31,8 +31,8 @@ void traverse(Node *root)
     {
         return;
     }
-    traverse(root->left);
     cout << root->val << " ";
+    traverse(root->left);
     traverse(root->right);
 }
 //
@@ -88,7 +88,7 @@ int main()
     vector<int> arr = {2, 3, 5, 8, 13, 21, 34};
     Node *root = makeTree(arr, 0);
 
-    swapOddLevel(root);
+    // swapOddLevel(root);
 
     traverse(root);
     return 0;
