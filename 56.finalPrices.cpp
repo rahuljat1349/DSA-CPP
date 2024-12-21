@@ -3,6 +3,8 @@
 #include <stack>
 using namespace std;
 
+// problem no. 1475
+
 // brut
 
 void getPrices(vector<int> &prices)
