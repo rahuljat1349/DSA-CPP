@@ -59,6 +59,7 @@ void swapOddLevel(Node *root)
             q.pop();
 
             currentLevelNodes.push_back(currentNode);
+            
             if (currentNode->left)
             {
                 q.push(currentNode->left);

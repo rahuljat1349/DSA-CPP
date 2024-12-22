@@ -25,6 +25,8 @@ void getPrices(vector<int> &prices)
 //
 //
 //
+
+
 //
 //
 //
@@ -50,7 +52,9 @@ int main()
 {
 
     vector<int> prices = {8, 4, 6, 2, 3};
+
     getPrices(prices);
+
 
     for (auto price : prices)
     {

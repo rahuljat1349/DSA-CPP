@@ -25,7 +25,7 @@ int DFS(int node, int parent, vector<bool> &visited, vector<vector<int>> &adj, i
     if (sum % k == 0)
     {
         components++;
-        return 0;
+        return 0;  // it is necessasry
     }
 
     return sum;
