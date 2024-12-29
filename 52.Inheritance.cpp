@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-class Species
+ class Species
 { // abstract class
 protected:
     string name;
