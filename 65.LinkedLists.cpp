@@ -148,7 +148,26 @@ public:
         }
         return -1;
     }
+
+    void reverse(){
+        Node* prev = NULL;
+        Node* cur = head;
+        Node* next = NULL;
+
+        while (cur != NULL)
+        {
+            next = cur->next;
+            cur->next = prev;
+
+            prev = cur;
+            cur = next;
+        }
+        head = prev;
+        
+    }
 };
+
+
 
 int main()
 {
@@ -160,8 +179,8 @@ int main()
     ll.push_front(5);
 
     // ll.insert(7, -1);
-
-    cout << ll.search(3) << endl;;
+    ll.reverse();
+    // cout << ll.search(3) << endl;;
 
 
 
