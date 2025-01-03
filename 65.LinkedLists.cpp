@@ -122,7 +122,7 @@ public:
 
         for (int i = 0; i < idx - 1; i++)
         {
-            temp  = temp->next;
+            temp = temp->next;
 
             if (temp == NULL)
             {
@@ -134,25 +134,28 @@ public:
         newNode->next = temp->next;
         temp->next = newNode;
     }
-    
-    int search(int val){
-        Node* temp = head;
+
+    int search(int val)
+    {
+        Node *temp = head;
         int idx = 0;
-        while (temp != NULL )
+        while (temp != NULL)
         {
-           if(temp->data == val) {
-            return idx;
-           }
-           idx++;
-           temp= temp->next;
+            if (temp->data == val)
+            {
+                return idx;
+            }
+            idx++;
+            temp = temp->next;
         }
         return -1;
     }
 
-    void reverse(){
-        Node* prev = NULL;
-        Node* cur = head;
-        Node* next = NULL;
+    void reverse()
+    {
+        Node *prev = NULL;
+        Node *cur = head;
+        Node *next = NULL;
 
         while (cur != NULL)
         {
@@ -163,11 +166,73 @@ public:
             cur = next;
         }
         head = prev;
-        
+    }
+    void printMid()
+    {
+        Node *slow = head;
+        Node *fast = head;
+        while (fast != NULL && fast->next != NULL)
+        {
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+        cout << "The Mid is : " << slow->data << endl;
+    }
+
+    bool hasCycle()
+    {
+        Node *slow = head;
+        Node *fast = head;
+        while (fast != NULL && fast->next != NULL)
+        {
+
+            slow = slow->next;
+            fast = fast->next->next;
+            if (slow == fast)
+            {
+                cout << "Cycle detected!" << endl;
+                return true;
+            }
+        }
+        cout << "No cycle detected!" << endl;
+        return false;
+    }
+    Node *CycleNode()
+    {
+        Node *slow = head;
+        Node *fast = head;
+        bool isCycle = false;
+
+        while (fast != NULL && fast->next != NULL)
+        {
+            slow = slow->next;
+            fast = fast->next->next;
+
+            if (slow == fast)
+            {
+                isCycle = true;
+                break;
+            }
+        }
+
+        if (!isCycle)
+        {
+            cout << "No cycle detected!" << endl;
+            return NULL;
+        }
+
+        slow = head;
+        Node* prev = NULL;
+        while (slow != fast)
+        {
+            slow = slow->next;
+            prev = fast;
+            fast = fast->next;
+        }
+        prev->next = NULL;    // remove cycle
+        return slow;
     }
 };
-
-
 
 int main()
 {
@@ -177,12 +242,15 @@ int main()
     ll.push_back(3);
     ll.push_front(4);
     ll.push_front(5);
+    ll.push_front(0);
 
     // ll.insert(7, -1);
     ll.reverse();
     // cout << ll.search(3) << endl;;
+    ll.printMid();
+    // ll.hasCycle();
 
-
+    ll.CycleNode();
 
 
     ll.print();
