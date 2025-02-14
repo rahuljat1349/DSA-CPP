@@ -5,7 +5,7 @@ using namespace std;
 
 void prevSmaller(vector<int> &arr, vector<int> &ans){
     stack<int> s;
-    for(int i = 0; i < arr.aize(); i++){
+    for(int i = 0; i < arr.size(); i++){
         while(s.size() > 0 && s.top() >= arr[i]){
             s.pop();
         }
