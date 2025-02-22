@@ -58,7 +58,7 @@ public:
         {
             s.push((long long)2 * val - minVal);
             minVal = val;
-        }
+        } 
         else
         {
             s.push(val);
