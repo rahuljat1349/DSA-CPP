@@ -42,6 +42,8 @@ int getCelebrity(vector<vector<int>> &arr)
 
 int main()
 {
+    // arr[i][j] == 1
+    // arr[j][i] == 0
     vector<vector<int>> arr = {
         {0, 1, 0},
         {0, 0, 0},
