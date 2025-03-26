@@ -51,6 +51,7 @@ public:
     {
         return currSize == 0;
     }
+    
 };
 
 int main()
@@ -59,8 +60,15 @@ int main()
     cq.push(1);
     cq.push(2);
     cq.push(3);
-    cq.pop();
-    cq.pop();
+    
+
+    while (!cq.isEmpty())
+    {
+        cout << cq.front() << " ";
+        cq.pop();
+    }
+    cout << endl;
+    
 
     cout << cq.front() << endl;
 
