@@ -78,7 +78,7 @@ int main()
     root->right->left = new Node(4);
     root->right->right = new Node(5);
 
-    cout << "Height : " << sum2(root) << endl;
+    cout << "Height : " << height(root) << endl;
 
     // Node *ans = sum(root);
     // cout << ans->val << endl;
