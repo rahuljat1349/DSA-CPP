@@ -14,24 +14,28 @@ class Node{
         this->right=NULL;
     }
 };
-
+int ans = 0;
 int height(Node* root){
     if(root==NULL){
         return 0;
     }
     int leftHight = height(root->left);
     int rightHight = height(root->right);
+    ans = max(ans, leftHight + rightHight);
     return max(leftHight,rightHight)+1;
 }
 
 int diameter(Node* root){
-    if(root==NULL){
-        return 0;
-    }
-    int leftDiam = diameter(root->left);
-    int rightDiam = diameter(root->right);
-    int currDiam = height(root->left)+height(root->right);
-    return max(currDiam, max(leftDiam, rightDiam));
+    height(root);
+
+    return ans;
+    // if(root==NULL){
+    //     return 0;
+    // }
+    // int leftDiam = diameter(root->left);
+    // int rightDiam = diameter(root->right);
+    // int currDiam = height(root->left)+height(root->right);
+    // return max(currDiam, max(leftDiam, rightDiam));
 }
 
 
