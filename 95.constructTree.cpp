@@ -7,7 +7,7 @@ struct Node
     int val;
     Node *left;
     Node *right;
-    Node(int x) : val(x), left(nullptr), right(nullptr) {}
+    Node(int x) : val(x), left(NULL), right(NULL) {}
 };
 
 int search(vector<int> inorder, int val, int left, int right)
@@ -18,36 +18,33 @@ int search(vector<int> inorder, int val, int left, int right)
         {
             return i;
         }
-        
     }
     return -1;
-    
 }
 
 Node *buildTree(vector<int> preorder, vector<int> inorder, int &preIdx, int left, int right)
 {
     if (left > right)
     {
-        return nullptr;
+        return NULL;
     }
-    Node* root = new Node(preorder[preIdx]);
+    Node *root = new Node(preorder[preIdx]);
 
     int inIdx = search(inorder, preorder[preIdx], left, right);
     preIdx++;
 
-    root->left = buildTree(preorder, inorder, preIdx, left, inIdx-1);
-    root->right = buildTree(preorder, inorder, preIdx, inIdx+1, right);
+    root->left = buildTree(preorder, inorder, preIdx, left, inIdx - 1);
+    root->right = buildTree(preorder, inorder, preIdx, inIdx + 1, right);
 
     return root;
-    
 }
 
 int main()
 {
     vector<int> preorder = {1, 2, 4, 5, 8, 9, 3, 6, 10, 11, 7, 12, 13};
     vector<int> inorder = {4, 2, 8, 5, 9, 1, 10, 6, 11, 3, 12, 7, 13};
-    int preIdx = 0 ;  // passed by reference
-    Node* root = buildTree(preorder, inorder, preIdx, 0, inorder.size()-1);
+    int preIdx = 0; // passed by reference
+    Node *root = buildTree(preorder, inorder, preIdx, 0, inorder.size() - 1);
 
     cout << root->right->right->left->val << endl;
     return 0;
