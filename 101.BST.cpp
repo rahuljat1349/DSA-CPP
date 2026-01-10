@@ -52,10 +52,9 @@ void inorder(Node *root)
         return;
     }
     inorder(root->left);
-    cout << root->val << " " << endl;
+    cout << root->val << " ";
     inorder(root->right);
 }
-
 
 // Search in Binary search Tree
 bool search(Node *root, int key)
@@ -79,6 +78,59 @@ bool search(Node *root, int key)
     }
 }
 
+// ############## Delete Node ##############
+
+Node *getInorderSuccessor(Node *root) {
+
+        while (root != NULL && root->left != NULL)
+        {
+            root = root->left;
+        }
+        return root;
+
+}
+
+Node *delNode(Node *root, int key)
+{
+    if (root == NULL)
+    {
+        return NULL;
+    }
+
+    if (root->val > key)
+    {
+        root->left = delNode(root->left, key);
+    }
+    else if (root->val < key)
+    {
+        root->right = delNode(root->right, key);
+    }
+    else
+    {
+        // root == key
+        if (root->left == NULL)
+        {
+            Node *temp = root->right;
+            delete root;
+            return temp;
+        }
+        else if (root->right == NULL)
+        {
+            Node *temp = root->left;
+            delete root;
+            return temp;
+        }
+        else
+        {
+            // 2 children
+            Node *IS = getInorderSuccessor(root->right);
+            root->val = IS->val;
+            root->right = delNode(root->right, IS->val);
+        }
+    }
+    return root;
+}
+
 int main()
 {
     vector<int> arr = {3, 2, 1, 5, 6, 4};
@@ -89,8 +141,15 @@ int main()
 
     cout << search(root, 1) << endl;
 
-    
-    
+    cout << "Before : ";
+    inorder(root);
+    cout << endl;
+
+    root = delNode(root, 2);
+
+    cout << "After : ";
+    inorder(root);
+    cout << endl;
 
     return 0;
 }
